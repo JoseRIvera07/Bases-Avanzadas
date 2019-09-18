@@ -1,0 +1,50 @@
+<div>
+    <nav class="navbar navbar-dark" style="background-color: #0b4980;">
+        <a class="navbar-brand" id="logo" href="admin_view/admin">Empleado</a>
+        <button (click)="CerrarSesion()" type="button" class="btn
+            btn-outline-light" id="btnCerrarSesion">
+            CERRAR SESION
+        </button>
+    </nav>
+</div>
+
+
+
+
+<form>
+    <div class="form-group form-inline">
+        <input class="form-control ml-2" type="text"
+            [ngModelOptions]="{standalone:true}" [(ngModel)]="searchText" />
+    </div>
+</form>
+
+<table id="table_empleado_Table" name="table_empleado" class="table
+    table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Categoría</th>
+            <th scope="col"> % Depreciacion</th>
+            <th scope="col">Precio</th>
+            <th scope="col"> ValorResidual</th>         
+            <th scope="col">CentroCosto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let activo of activos| filter:searchText">
+            <th scope="row">{{ activo.codigo }}</th>         
+            <td>{{ activo.Catname}}</td>
+            <td>{{ activo.PorcentajeDepreciacion }}</td>
+            <td>{{ activo.precio}}</td>            
+            <td>{{ activo.ValorResidual }}</td>
+            <td>{{ activo.CentroCosto}}</td>  
+
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page"
+        [pageSize]="pageSize">
+    </ngb-pagination>
+</div>

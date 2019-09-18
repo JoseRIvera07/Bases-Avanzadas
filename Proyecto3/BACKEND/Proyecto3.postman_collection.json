@@ -1,0 +1,580 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Proyecto3",
+		"_postman_id": "89d39117-cbdf-37b9-6c17-9f80f850ea02",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Compania",
+			"description": "",
+			"item": [
+				{
+					"name": "Todas las Companias",
+					"request": {
+						"url": "http://localhost:3000/api/company",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Compania",
+					"request": {
+						"url": "http://localhost:3000/api/company",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idCompany\":\"C03\",\n\t\"name\":\"Walmart\",\n\t\"description\":\"Cadena de supermercadas mas barata de costa rica.\",\n\t\"typeC\":\"Supermercado\",\n\t\"latitude\":9.86005236,\n\t\"longitude\":-82.0044976,\n\t\"address\":\"10, Provincia de Cartago, Cartago\",\n\t\"roundsman\":80,\n\t\"phone\":\"2022 9595\",\n\t\"website\":\"walmartcr.com\",\n\t\"rating\":10,\n\t\"schedule\":\"Lunes a Viernes 12:00 m.d a 10>00 p.m.\",\n\t\"photo\":\"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Compania",
+					"request": {
+						"url": "http://localhost:3000/api/company/C01",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"latitude\":9.8647699,\n\t\"longitude\":-83.9144976,\n\t\"address\":\"10, Provincia de Cartago, Cartago\",\n\t\"roundsman\":25,\n\t\"phone\":\"2290 9595\",\n\t\"website\":\"pizzahutcr.com\",\n\t\"rating\":10,\n\t\"schedule\":\"Lunes a Viernes 12:00 m.d a 10>00 p.m.\",\n\t\"photo\":\"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Una Compania",
+					"request": {
+						"url": "http://localhost:3000/api/company/C01",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Compania",
+					"request": {
+						"url": "http://localhost:3000/api/company/C01",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"description": "",
+			"item": [
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idCard\":2015000004,\n\t\"name\":\"Allan Jose\",\n\t\"surname1\":\"Chacon\",\n\t\"surname2\":\"Lopez\",\n\t\"borndate\":\"1995-05-07\",\n\t\"email\":\"AChacon@gmail.com\",\n\t\"phone\":\"89852070\",\n\t\"username\":\"AllanC\",\n\t\"pass\":\"AllanC\",\n\t\"typeUser\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Todos los Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/user",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Info de un Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/user/2015000001",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarUsuario",
+					"request": {
+						"url": "http://localhost:3000/api/user/2015000004",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"AlChacon@gmail.com\",\n\t\"phone\":\"80878825\",\n\t\"pass\":\"AlChacon\"\n\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/user/2015000004",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"url": "http://localhost:3000/api/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"carballoP07\",\n\t\"pass\":\"123456\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoCompania",
+			"description": "",
+			"item": [
+				{
+					"name": "Tipos Compania",
+					"request": {
+						"url": "http://localhost:3000/api/typecompany",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo tipoCompania",
+					"request": {
+						"url": "http://localhost:3000/api/typecompany",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"typename\":\"Restaurant\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"description": "",
+			"item": [
+				{
+					"name": "Todos los productos",
+					"request": {
+						"url": "http://localhost:3000/api/product",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idProduct\":\"P01\",\n\t\"name\":\"Pizza\",\n\t\"description\":\"Pizza con jamon.\",\n\t\"price\":12000,\n\t\"photo\":\"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo productos",
+					"request": {
+						"url": "http://localhost:3000/api/product",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"_id\": \"P01\",\n     \"name\": \"Pizza\",\n     \"description\": \"Pizza con jamon.\",\n     \"price\": 12000,\n     \"photo\": \"\",\n     \"company\": \"C01\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"request": {
+						"url": "http://localhost:3000/api/product/P01",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\":\"Pizza de jamon\",\n\t\"price\":10000,\n\t\"photo\":\"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Un producto",
+					"request": {
+						"url": "http://localhost:3000/api/product/P01",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto",
+					"request": {
+						"url": "http://localhost:3000/api/product/P01",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Producto por Compania",
+					"request": {
+						"url": "http://localhost:3000/api/product/C01",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"description": "",
+			"item": [
+				{
+					"name": "Todos los Pedidos",
+					"request": {
+						"url": "http://localhost:3000/api/order",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Pedido",
+					"request": {
+						"url": "http://localhost:3000/api/order",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\":\"MDiaz\",\n\t\"products\":[\"P01\",\"P02\"],\n\t\"amount\":[1,1],\n\t\"price\":[12000,11000],\n\t\"date\":\"2019-06-15\",\n\t\"state\":\"Registrado\",\n\t\"observation\":\"La pizza de jamon debe de tener queso extra\",\n\t\"totalcash\":23000,\n\t\"total\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido por Id",
+					"request": {
+						"url": "http://localhost:3000/api/order/5d046d5e4c638d1fe0e7c88f",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Pedidos por Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/orderBYuser/MDiaz",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "cambiar Estado",
+					"request": {
+						"url": "http://localhost:3000/api/orderstate/5d046d5e4c638d1fe0e7c88f",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"state\":\"En ruta\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoUsuario",
+			"description": "",
+			"item": [
+				{
+					"name": "Todos los TipoUsuario",
+					"request": {
+						"url": "http://localhost:3000/api/usertype",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo TipoUsuario",
+					"request": {
+						"url": "http://localhost:3000/api/usertype",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":2,\n\t\"name\":\"Client\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar TipoUsuario",
+					"request": {
+						"url": "http://localhost:3000/api/usertype/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TipoUsuario por Id",
+					"request": {
+						"url": "http://localhost:3000/api/usertype/2",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario por TipoUsuario",
+					"request": {
+						"url": "http://localhost:3000/api/userBYusertype/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lista de Interes",
+			"description": "",
+			"item": [
+				{
+					"name": "Todas las Listas",
+					"request": {
+						"url": "http://localhost:3000/api/list",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Nueva Lista",
+					"request": {
+						"url": "http://localhost:3000/api/list",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idList\":\"L01\",\n\t\"user\":\"MDiaz\",\n\t\"origen\":\"C01\",\n\t\"placelist\":[\"C02\",\"C03\"],\n\t\"distance\":[100,200]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Lista",
+					"request": {
+						"url": "http://localhost:3000/api/list/L01",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\":\"MDiaz\",\n\t\"products\":[\"P01\",\"P02\"],\n\t\"amount\":[1,1],\n\t\"price\":[12000,11000],\n\t\"date\":\"2019-06-15\",\n\t\"state\":\"Registrado\",\n\t\"observation\":\"La pizza de jamon debe de tener queso extra\",\n\t\"totalcash\":23000,\n\t\"total\":2\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Lista",
+					"request": {
+						"url": "http://localhost:3000/api/list/L01",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lista por Usuario",
+					"request": {
+						"url": "http://localhost:3000/api/listBYuser/MDiaz",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"description": "",
+			"item": [
+				{
+					"name": "Subir Foto",
+					"request": {
+						"url": "http://localhost:3000/api/storage/put",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileUploaded",
+									"value": "",
+									"description": "",
+									"type": "file"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

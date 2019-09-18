@@ -1,0 +1,16 @@
+<div class="wrapper wrapper-full-page" style="background-color: rgba(94, 94, 94, 0.86);">
+<br><br>
+<div class="container-fluid">
+  <div class="card-columns">
+    <ng-container *ngFor="let client of clients; let i = index" >
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{client.idCard}} - {{client.name}}</h3>
+        <p class="card-text" ><strong>Birthdate: </strong> {{client.birthdate}} <strong>Address: </strong> {{client.address}}</p>
+        <p class="card-text" ><strong>Telefono: </strong> {{client.number}} <strong>Email: </strong> {{client.email}}</p>
+        <p class="card-text" ><strong>Type: </strong> {{client.type}} <strong>User Name: </strong> {{client.user}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </div>
+</div>

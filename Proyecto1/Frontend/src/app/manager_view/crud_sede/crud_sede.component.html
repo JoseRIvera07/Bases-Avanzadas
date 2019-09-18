@@ -1,0 +1,138 @@
+<app-admin></app-admin>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card border-info" style="max-width: 50rem; margin-bottom: 20px">
+                <div class="card-body text-center">
+                    <h5 class="card-title"> Insertar Sede</h5>
+                    <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 20px">Nombre</h6>
+                        <div class="form-group">
+                            <input type="text" #txt_name class="form-control" formControlName="Nombre"
+                                [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }" />
+                            <div *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+                                <div *ngIf="f.Nombre.errors.required">Nombre Requerido</div>
+                            </div>
+                        </div>
+
+                        <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 20px">Detalle Ubicacion</h6>
+                        <div class="form-group">
+                            <input type="text" #DetalleUbi class="form-control" formControlName="DetalleUbi"
+                                [ngClass]="{ 'is-invalid': submitted && f.DetalleUbi.errors }" />
+                            <div *ngIf="submitted && f.DetalleUbi.errors" class="invalid-feedback">
+                                <div *ngIf="f.DetalleUbi.errors.required">DetalleUbi Requerido</div>
+                            </div>
+                        </div>
+
+
+                        <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 20px">Provincia</h6>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <select class="form-control" id="Provincia-Dropdown" name="Provincia"
+                                    formControlName="Provincia" #select_prov data-style="btn-primary"
+                                    data-live-search="true" data-selectpicker data-collection-name="items"
+                                    ng-model="selected"
+                                    (change)="CantonDropdown(select_prov.value)"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Provincia.errors }">
+                                    <option [ngValue]="null">Seleccione un Provincia</option>
+                                </select>
+                                <div *ngIf="submitted && f.Provincia.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Provincia.errors.required">Provincia Requerida</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 20px">Canton</h6>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <select class="form-control" id="Canton-Dropdown" name="Canton"
+                                    formControlName="Canton" #select_canton data-style="btn-primary"
+                                    data-live-search="true" data-selectpicker data-collection-name="items"
+                                    ng-model="selected"
+                                    (change)="DistritoDropdown(select_canton.value)"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Canton.errors }">
+                                    <option [ngValue]="null">Seleccione un Provincia</option>
+                                </select>
+                                <div *ngIf="submitted && f.Canton.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Canton.errors.required">Canton Requerido</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 20px">Distrito</h6>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <select class="form-control" id="Distrito-Dropdown" name="Distrito"
+                                    formControlName="Distrito" #select_dep data-style="btn-primary"
+                                    data-live-search="true" data-selectpicker data-collection-name="items"
+                                    ng-model="selected"
+                                    [ngClass]="{ 'is-invalid': submitted && f.Distrito.errors }">
+                                    <option [ngValue]="null">Seleccione un Distrito</option>
+                                </select>
+                                <div *ngIf="submitted && f.Distrito.errors" class="invalid-feedback">
+                                    <div *ngIf="f.Distrito.errors.required">Distrito Requerido</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <button id="insertar_btn" class="btn btn-primary">Insertar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--TABLA-->
+        <div class="col-md-8">
+            <table id="table_Sede_Table" name="table_Sede" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#Codigo</th>
+                        <th scope="col">Sede</th>
+                        <th scope="col">Provincia</th>
+                        <th scope="col">Canton</th>
+                        <th scope="col">Distrito</th>
+                        <th scope="col">Apellido1</th>
+                        <th scope="col">Apellido2</th>
+                        <th scope="col">Nombre</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sede of sedes">
+                        <th scope="row">{{ sede.id }}</th>
+                        <td>{{ sede.name }}</td>
+                        <td>{{ sede.provincia}}</td>
+                        <td>{{ sede.canton}}</td>
+                        <td>{{ sede.distrito}}</td>
+                        <td>{{ sede.apellido1}}</td>
+                        <td>{{ sede.apellido2}}</td>
+                        <td>{{ sede.nombre}}</td>
+                        <td>
+                            <button mat-icon-button color="accent" class='btn btn-danger' (click)="updateSede(sede.cedula,sede.id)">
+                                <mat-icon aria-label="Edit">edit</mat-icon>
+                            </button> </td>
+                        <td>
+                            <button class='btn btn-danger' (click)="deleteSede(sede.id,sede.name)">
+                                <mat-icon aria-label="Edit">delete</mat-icon>
+                            </button> </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between p-2">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+                </ngb-pagination>
+            </div>
+        </div>
+
+    </div>
+
+</div>
